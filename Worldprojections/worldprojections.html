@@ -9,55 +9,75 @@
     <h1>In this project I learned how to display images in different projections</h1>
     
     <h2 style="color:rgb(64, 200, 224)">Projection Process using QGIS</h2>
-    <p>After uploading the ‘ne_10m_admin_0_countries’ vector to QGIS, I modified the symbology of the layer. Then I added the Indicatrix mapper, with layers of graticule and caps, placing those layers above the map. Clicking the Project Coordinate Reference System (CRS) from the bottom right corner, I toggled between the different CRS available.</p>
+    <p>After uploading the ‘ne_10m_admin_0_countries’ vector to QGIS, I modified the symbology of the layer. Then I added the Indicatrix mapper, 
+        with layers of graticule and caps, placing those layers above the map. Clicking the Project Coordinate Reference System (CRS) from the bottom right corner, I toggled between the different CRS available.</p>
     
     <h2>WGS84 Projection</h2>
-    <h3>The North and South Poles are largely warped. I recognize this map the most as the rectangular shape is familiar.</h3>
+    <h3>Because this is a cylindrical projection, the North and South Poles are largely warped. Since the axis runs North-South, 
+        this is a normal cylindrical projection. The indicatrix caps show how the area is distorted at the poles.</h3>
     <a href=".//maps/4326.png">
     <img src=".//maps/4326.png" alt="WGS84" width='500px'>
     </a>
+   
     <h2>Aitoff Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is a modified azimuthal projection. It looks more globe like, where the poles are still stretched. This projection 
+        attempts to rectify area and shape distortion, but is still not perfect. The outskirts of the map are less accurate than the center. </h3>
     <a href=".//maps/54043.png">
     <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
     </a>
+  
     <h2>WGS84 Pseudo Mercato Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is a cylindrical projection. It preserves shape very well, but distorts area greatly. I recognize this 
+        map the most as the rectangular shape is familiar, and the size of Greenland rivals Africa. </h3>
     <a href="./maps/PseudoMercatorMap3857.png">
     <img src="./maps/PseudoMercatorMap3857.png" alt="Mercato3857" width='500px'>
     </a>
+   
     <h2>Sphere Winkel Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is unique in that it minorly distorts every dimension in an attempt to mitigate extreme distortion of any one property. 
+        This map is the most aesthetically pleasing. </h3>
     <a href="./maps/Sphere Winkel Projection.png">
     <img src="./maps/Sphere Winkel Projection.png" alt="Winkel" width='500px'>
     </a>
+   
     <h2>World Cylindrical Equal Area Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This cylindrical projection looks extremely squashed. However, as it preserves area, the shape of the countries is what distorts.</h3>
     <a href="./maps/World Cylindrical Equal Area.png">
     <img src="./maps/World Cylindrical Equal Area.png" alt="CylinderArea" width='500px'>
     </a>
+   
     <h2>World Equidistant Conic Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This conic projection does well to preserve distance. However, around the edges of the map the countries stretch greatly, 
+        as seen from the indicatrix caps. As this is a conic projection, the circular map isn’t complete.</h3>
     <a href="./maps/World Equidistant Conic Projection.png">
     <img src="./maps/World Equidistant Conic Projection.png" alt="ConicEquidistant" width='500px'>
     </a>
+  
     <h2>North Pole Azimuthal Equidistant Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This planer projection preserves distance. However, it warps Antarctica to surround the entire world. The countries on the 
+        edges of the circle look much larger than the countries in the center. It is very interesting to see how the countries all seem to connect.</h3>
     <a href="./maps/North Pole Azimuthal Equidistant.png">
     <img src="./maps/North Pole Azimuthal Equidistant.png" alt="AzimuthalEquidistant" width='500px'>
     </a>
+   
     <h2>Sphere Van der Grinten Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is a polyconic projection. This reduces warping at the larger end of the cone, since there is a vertex of another cone there. 
+        Distortion is minimized along the equator. Shapes, areas, distances, directions, and angles are all distorted slightly. This circular map is my personal favorite.</h3>
     <a href="./maps/Sphere Van der Grinten.png">
     <img src="./maps/Sphere Van der Grinten.png" alt="VanDerGrinten" width='500px'>
     </a>
+   
     <h2>World Bonne Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This projection is a pseudo conical equal-area map projection. It has a characteristic heart shape. Other dimensions hold 
+        true to scale along the central meridian and standard parallel, but distort the further away. </h3>
     <a href="./maps/World Bonne Projection.png">
     <img src="./maps/World Bonne Projection.png" alt="Bonne" width='500px'>
     </a>
+   
     <h2>South Pole Orthographic Projection</h2>
-    <h3>Some observations</h3>
+    <h3>This planer projection is interesting in which one can see where Antarctica lies relative to other countries. Most maps 
+        tend to greatly distort Antarctica, so being able to see its true scale gives perspective. Direction holds true from the 
+        point of projection, so it is useful for navigating the poles. However, near the edge, it distorts shape and area. </h3>
     <a href="./maps/South Pole Orthographic.png">
     <img src="./maps/South Pole Orthographic.png" alt="Orthographic" width='500px'>
     </a>
