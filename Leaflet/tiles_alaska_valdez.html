@@ -27,7 +27,7 @@
   <div id="map"></div>
   <script>
       var map = L.map('map').setView([73.9713117419873, -108.15180062218285], 14.0);
-      L.tileLayer('file:////Volumes/Seagate%20Keana/GEOG370_Data/HW4/Tiles_alaska/{z}/{x}/{y}.png', {
+      L.tileLayer('./Tiles_alaska/{z}/{x}/{y}.png', {
         minZoom: 12,
         maxZoom: 16,
         tms: false,
