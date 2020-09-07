@@ -24,7 +24,8 @@
         <script> 
         // this means that the following lines will be script (it could also point to an external script file). 
             var map = L.map('mapid').setView([35.91, -79.05], 17);  // YOU CAN CHANGE THE ZOOM
-        // this line is creating the variable map by initializing the L.map class (a Leaflet class) with the mapidelement that we created before. setView is a method that can be applied to the class L.map :you can give it alatitude, longitude and a zoom.  The higher the value of the zoom,the finer the initial scale of the map. 
+        // this line is creating the variable map by initializing the L.map class (a Leaflet class) with the mapid element that we created before. 
+        // setView is a method that can be applied to the class L.map :you can give it a latitude, longitude and a zoom.  The higher the value of the zoom,the finer the initial scale of the map. 
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
             {
@@ -37,7 +38,7 @@
                 .bindPopup('I am at Carolina Coker Arboretum')// YOU CAN CHANGE THE MESSAGE
                 .openPopup();
         
-            // L.geoJSON(uncwell).addTo(map)
+            L.geoJSON(uncwell).addTo(map)
 
             // create custom icon variable
             var uncIcon= L.icon({ // notice the L.icon which is a Leaflet object with properties
@@ -53,7 +54,7 @@
             var customPopup= "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg' width='100px'/>";
             // YOU COULD CHANGE the https link to another picture. 
             // YOU COULD CHANGE the 100px to other values like 50px or 400px to see what happens
-            // the following line should go at the end,before script closing tag
+            // the following line should go at the end, before script closing tag
             
             L.geoJSON(uncwell, { // a
             pointToLayer:function(feature, latlng) { // b
