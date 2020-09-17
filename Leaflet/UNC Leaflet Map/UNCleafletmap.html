@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive UNC Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin=""/>
+    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" 
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+    <script src = "./flowering_cherries_4326.geojson"></script>
+
+</head>
+<body>
+    <div id="mapid"></div>
+        <style>
+            #mapid{ width: 1000px; height: 600px; }
+        </style>
+
+    <script>
+        
+        var map = L.map('mapid').setView([35.91,-79.05], 15.5);
+    
+        L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png', 
+        {
+            attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // 1st marker
+
+        var arboretumIcon= L.icon({
+            iconUrl: 'https://chapelhillgardenclub.files.wordpress.com/2017/11/coker-arboretum1.jpg?w=960&h=640',
+            iconSize: [45,45],
+            popupAnchor: [0,0]
+        });
+
+        var arboretumPopup= "Map of the Coker Arboretum<br/><img src='https://ncbg.unc.edu/files/2020/03/Coker-Map-scaled-e1584637477636-1024x753.jpg' width='100px'/>";
+
+        L.marker([35.913792, -79.048911], {icon: arboretumIcon}).addTo(map)
+            .bindPopup(arboretumPopup)
+            .openPopup();    
+
+        // 2nd marker
+        var quadIcon= L.icon({
+            iconUrl: 'https://www.unc.edu/wp-content/uploads/2019/01/027018_CampusScenes0018-1200x675.jpg',
+            iconSize:[45,45],
+            popupAnchor:[0,0]
+        })
+
+        var quadPopup= "Free Advice Friday Quad Spot<br/><img src='https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/82758376_2673784162658481_4526970734861352960_n.jpg?_nc_cat=101&_nc_sid=8bfeb9&_nc_ohc=R3PkVbD4UlIAX_huXLJ&_nc_ht=scontent-iad3-1.xx&oh=68af5f3c582468cfd09c2c9c47322405&oe=5F7A43EB' width='100px'/>";
+
+        L.marker([35.910222, -79.050033], {icon: quadIcon}).addTo(map)
+            .bindPopup(quadPopup)
+            .openPopup();
+
+        // 3rd markers
+        L.geoJSON(cherrytrees).addTo(map)
+        
+        var treeIcon= L.icon({
+            iconUrl: 'https://e7.pngegg.com/pngimages/257/667/png-clipart-cherry-blossom-pink-m-st-au-150-min-v-unc-nr-ad-cherry-blossom-branch-flower.png',
+            iconSize: [30,30],
+            popupAnchor: [0,0]
+        });
+
+        var treePopup= "Cherry trees on campus<br/><img src='https://i.pinimg.com/originals/15/ac/25/15ac25860841003bc978b936676ed02f.jpg' width='100px'/>";
+
+        L.geoJSON(cherrytrees, {
+            pointToLayer:function(feature, latlng) {
+            return L.marker(latlng, {icon: treeIcon});}})
+                .bindPopup(treePopup)
+                .addTo(map);
+    
+    
+    </script>
+
+</body>
+</html>
