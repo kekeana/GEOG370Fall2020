@@ -29,6 +29,9 @@
       var map = L.map('map').setView([74.0682200205, -108.200186209], 13);
       
       var zeMarker = L.marker([74.0682200205, -108.200186209]).addTo(map);
+      var poolsMarker = L.marker([74.0082200205, -108.000186209]).addTo(map);
+      var riverMarker = L.marker([73.0682200205, -107.200186209]).addTo(map);
+
 
       var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -47,7 +50,9 @@
       }
 
       var vectorInfo = {
-        "middle map":zeMarker
+        "middle map":zeMarker,
+        "rectangle pools":poolsMarker,
+        "river":riverMarker
       }
 
       L.control.layers(tileInfo, vectorInfo).addTo(map);
