@@ -26,12 +26,24 @@
 <body>
   <div id="map"></div>
   <script>
-      var map = L.map('map').setView([74.0682200205, -108.200186209], 13);
+      var map = L.map('map').setView([74.0682200205, -108.070056209], 13);
       
-      var zeMarker = L.marker([74.0682200205, -108.200186209]).addTo(map);
-      var poolsMarker = L.marker([74.0082200205, -108.000186209]).addTo(map);
-      var riverMarker = L.marker([73.0682200205, -107.200186209]).addTo(map);
-
+      var zeMarker = L.marker([74.0682200205, -108.190186209]).addTo(map)
+        .bindPopup(zePopup)
+        .openPopup();
+      
+      var zePopup = "Open Water near Valdez<br/><img src='' width='100px'/>;
+      
+      
+      var poolsMarker = L.marker([74.0682200205, -107.950086209]).addTo(map)
+        .bindPopup()
+        .openPopup();
+      
+      
+      
+      var riverMarker = L.marker([74.1252200205, -107.942186209]).addTo(map)
+        .bindPopup()
+        .openPopup();
 
       var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
