@@ -28,6 +28,8 @@
   <script>
       var map = L.map('map').setView([74.0682200205, -108.200186209], 13);
       
+      var zeMarker = L.marker([74.0682200205, -108.200186209]).addTo(map);
+
       var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       }).addTo(map);
@@ -39,7 +41,7 @@
         attribution: 'USGS'
       })
 
-      var myTileInfo = {
+      var tileInfo = {
         "ESRI World Imagery":Esri,
         "Valdez, Alaska Tiles Map":myTiles
       }
