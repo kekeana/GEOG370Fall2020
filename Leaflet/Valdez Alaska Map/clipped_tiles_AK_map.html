@@ -39,14 +39,18 @@
         maxZoom: 16,
         tms: false,
         attribution: 'USGS'
-      })
+      });
 
       var tileInfo = {
         "ESRI World Imagery":Esri,
         "Valdez, Alaska Tiles Map":myTiles
       }
 
-      L.control.layers(myTileInfo).addTo(map);
+      var vectorInfo = {
+        "middle map":zeMarker
+      }
+
+      L.control.layers(tileInfo, vectorInfo).addTo(map);
 
   </script>
 </body>
