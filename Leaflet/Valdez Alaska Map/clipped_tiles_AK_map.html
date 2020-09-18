@@ -28,23 +28,24 @@
   <script>
       var map = L.map('map').setView([74.0682200205, -108.070056209], 13);
       
+      var zePopup = "Open Water in the bay of Valdez<br/><img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZ2avyfIMvkWoDzjEuONmD3hsr_YKakKK4Kg&usqp=CAU' width='100px'/>";
       var zeMarker = L.marker([74.0682200205, -108.190186209]).addTo(map)
         .bindPopup(zePopup)
         .openPopup();
       
-      var zePopup = "Open Water near Valdez<br/><img src='' width='100px'/>;
       
-      
+      var poolsPopup = "Three rectangular pools, used in georeferenceing. Their ground location made them ideal candidates. I would like to swim in them.<br/><img src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQpGl8FgPaEQf70mECMP97iGCgH6DocLK-Ytw&usqp=CAU' width='100px'/>";
       var poolsMarker = L.marker([74.0682200205, -107.950086209]).addTo(map)
-        .bindPopup()
+        .bindPopup(poolsPopup)
         .openPopup();
       
       
-      
-      var riverMarker = L.marker([74.1252200205, -107.942186209]).addTo(map)
-        .bindPopup()
+      var housePopup = "A property of houses resides along the road. This location hasn't changed over the years, from 1978-2013. This was also used as a control point.<br/><img src= 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAMAAACahl6sAAAAdVBMVEX///8AAACzs7PW1tYXFxe6uroJCQmampqXl5cWFhbr6+suLi7Y2Njv7+/7+/uKioqBgYF2dnb19fXKyspVVVVFRUXk5OSPj4+vr69iYmJaWlpPT098fHympqbMzMyoqKhtbW0hISE0NDQ/Pz/BwcEoKCgxMTFRkPA1AAADwElEQVR4nO3b6XKiQBSGYVqjEAKCuMQkbslo7v8SB1C0QZY+3YfGVH3vD0qnxoYnyNKaOA5CCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBC6K/lx8t5oPXK5P3zuGDeGv3GL0KI6UTjlf5b+krhsW+RXuPXbGt0JBfHs0iuDg1J4XgOyc1BltwdzyCRHESJ7BheUnKQJGXH0JKKgyCpOoaVPDiUJY+OISU1DkVJnWM4Sa1DSVLvGErS4FCQNDmGkTQ6OiXNjiEkLY4OSZvDvqTV0Sppd9iWdDhaJF0Ou5JOR6Ok22FTouBokKg47EmUHLUSNYctST4f1JKoOuxIlB0PEnWHDQnBUZFQHP1LSI6ShOboW0J0SBKqo18J2XGT0B19SjQcV4mOoz+JliOX6Dn6kmg6UslG09GPRNuRStyP6dNIDBxCfIehd34OiZFDiM90iMnqCSSGDiFG+SifQ0uMHeI8ywcKdCh8EnOHEO51rOBrOAmHQ5xvw51+yC92W7bOskMI6Qs2T21mxixhcoitNKa/tC/hcohVadgddaeYStgc4rs88Jp6pJhJ+BziJd34C+GymB0tShgd4s1xLsf7PkkXi3QRWZNwOrK7lF2+M8bZVT6cpxLXkoTVIdL51WSfjxtli2SbXus9KxJeR3bSOkkQZ51dr+cWJMyOMB3SzRZOeL3j8Px08a93Cavj55AL4suu8C9rCDbZgjrjokr4HOcP93LadZKkvI78KfXNRZTwOF6/olPSsaY1eVSKhMPxE++V1kWfN6pLzB3fsfLvocX00VUlxo7fw0z5h+bsNFagJjF1nDf3sdbyjknkJ+viwURnHSoSQ8c0uu+NfexKx3o496XVxMUDnT2iIjF0rG4/aWcdb+SBZ3P5BBYcikdbvRV1SQwd8/tIo6h8oOxKh78XFo+o13Y1iaEjuo90GFWGjkvPbv8z0f0wtVVi6Pi4jxTsqmNH9c9O+qtrlhg6XqSD4P3hBNwAoc6uVCSm5135zeM93Jo0vLWoE14FifF18CQN5sfV4U+l76pHxcdcRpBaifl9yVgeLthW90kkX0ac4k6MOknslDDcJ5Z/PSCpHiWz8j9cnb72WatewnG/e6zZz91RP4Fol7DMP6Z+w7Z2SBj3CdN8cKkF0fqmoV7CNq99OFUpNj4abUEhYfycYdu6vW0t4pX+W8zldgjxFXZscFvBYbv81eLkksWIM/M/mArHE/pqCVNShBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhAbsP/1qMymFMWtSAAAAAElFTkSuQmCC' width='100px'/>";
+      var houseMarker = L.marker([74.1252200205, -107.942186209]).addTo(map)
+        .bindPopup(housePopup)
         .openPopup();
 
+      
       var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       }).addTo(map);
@@ -64,7 +65,7 @@
       var vectorInfo = {
         "middle map":zeMarker,
         "rectangle pools":poolsMarker,
-        "river":riverMarker
+        "houses":houseMarker
       }
 
       L.control.layers(tileInfo, vectorInfo).addTo(map);
