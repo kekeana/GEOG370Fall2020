@@ -28,16 +28,23 @@
   <script>
       var map = L.map('map').setView([74.0682200205, -108.200186209], 13);
       
-      var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      var Esri = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
       }).addTo(map);
       
-      L.tileLayer('./clipped_tiles_valdez/{z}/{x}/{y}.png', {
+      var myTiles = L.tileLayer('./clipped_tiles_valdez/{z}/{x}/{y}.png', {
         minZoom: 13,
         maxZoom: 16,
         tms: false,
         attribution: 'USGS'
-      }).addTo(map);
+      })
+
+      var myTileInfo = {
+        "ESRI World Imagery":Esri,
+        "Valdez, Alaska Tiles Map":myTiles
+      }
+
+      L.control.layers(myTileInfo).addTo(map);
 
   </script>
 </body>
