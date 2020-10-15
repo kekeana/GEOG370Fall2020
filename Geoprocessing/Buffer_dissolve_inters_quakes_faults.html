@@ -11,10 +11,6 @@
             Research Question: What earthquakes lie within fault zones (area within 500 meters of line)? What counties have the most severe earthquakes and the most fault lines? 
         </p> 
         <br/>
-        <!-- Your map goes here -->
-        <a href="Geoprocessing CA Earthquakes Faults.png">
-            <img src="Geoprocessing CA Earthquakes Faults.png" alt="Earthquake and Faults map" width="500px">
-        </a>
         <p>Process:<br/>
             I first dissolved the counties of California, and then made a buffer around this dissolved layer. This California buffer is buffered by 100 km, 
             which is the range large earthquakes can be felt. I then clipped both my fault lines and earthquakes vector layers to reduce the data outside of California. 
@@ -22,6 +18,11 @@
             the earthquake epicenter. I created a symmetrical difference of the buffered fault zones and buffered earthquakes. Finally, I created an intersection of 
             the buffered fault zones and buffered earthquakes in order to show where there are earthquakes over fault zones. 
         </p>
+        <br/>
+        <!-- Your map goes here -->
+        <a href="Geoprocessing Earthquakes Faults.png">
+            <img src="Geoprocessing Earthquakes Faults.png" alt="Earthquake and Faults map" width="500px">
+        </a>
 
         <h3>Link to home page below</h3>
 
