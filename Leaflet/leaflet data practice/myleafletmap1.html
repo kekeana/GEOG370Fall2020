@@ -31,7 +31,8 @@
             {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
-        // L.tileLayer can display a tile layer.You can check out other tile layer examples at https://leaflet-extras.github.io/leaflet-providers/preview/. The location of the tile layer needs to be in single quotes. You can also indicate the attribution for that layer. In this example we usedthe Open StreetMap attribution. The '&copy; <a>and the other information you see here is HTML code adding a copyright sign, and making a hyperlink to OpenStreetMap.
+        // L.tileLayer can display a tile layer.You can check out other tile layer examples at https://leaflet-extras.github.io/leaflet-providers/preview/. The location of the tile layer needs to be in single quotes. You can also indicate the attribution for that layer. 
+        // In this example we used the Open StreetMap attribution. The '&copy; <a>and the other information you see here is HTML code adding a copyright sign, and making a hyperlink to OpenStreetMap.
         // At the end we include .addTo(map),which is indicating to add the tile layer to the variable map. 
         
             L.marker([35.913792, -79.048911]).addTo(map)
@@ -43,7 +44,7 @@
             // create custom icon variable
             var uncIcon= L.icon({ // notice the L.icon which is a Leaflet object with properties
                 iconUrl:'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
-            // this points to a jpg image obtained from the internet
+                        // this points to a jpg image obtained from the internet
                 iconSize:[30,30], // size of the icon
                 popupAnchor:[0,0] // where the icon is located relative to the lat lon of the point.
             });
